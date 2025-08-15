@@ -66,14 +66,6 @@ export default function Portfolio() {
       demo: "#",
       image: "/image3.png",
     },
-    // {
-    //   title: "Dashboard Analytics",
-    //   description: "Dashboard interativo para análise de dados com gráficos dinâmicos",
-    //   technologies: ["React", "D3.js", "Express"],
-    //   github: "#",
-    //   demo: "#",
-    //   image: "/placeholder.svg?height=200&width=400",
-    // },
   ]
 
   return (
@@ -83,8 +75,8 @@ export default function Portfolio() {
         <div className="flex flex-col items-center text-center space-y-4">
           <div className="space-y-2">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">
-              Olá, eu sou {" "}
-              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
+              Olá, eu sou{" "}
+              <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent whitespace-nowrap">
                 Luiz Felipe
               </span>
             </h1>
@@ -95,7 +87,7 @@ export default function Portfolio() {
           </div>
           <div className="flex gap-4">
             <Button asChild>
-              <a href="/LuizFelipe.pdf" download>
+              <a href="/Luiz_Felipe_Curriculo.docx" download>
                 Baixar Currículo
               </a>
             </Button>

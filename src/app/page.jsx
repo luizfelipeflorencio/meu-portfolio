@@ -87,7 +87,7 @@ export default function Portfolio() {
           </div>
           <div className="flex gap-4">
             <Button asChild>
-              <a href="/Luiz_Felipe_Curriculo.docx" download>
+              <a href="/Luiz_Felipe_Curriculo.docx" download="Luiz_Felipe_Curriculo.docx">
                 Baixar Currículo
               </a>
             </Button>

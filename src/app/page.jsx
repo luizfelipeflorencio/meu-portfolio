@@ -115,6 +115,7 @@ export default function Portfolio() {
     { name: "API Rest", icon: CloudCog, level: "Intermediário" },
     { name: "Node.js", icon: Server, level: "Intermediário" },
     { name: "MongoDB", icon: Database, level: "Intermediário" },
+    { name: "Supabase", icon: Database, level: "Intermediário" },
     { name: "MySQL", icon: Database, level: "Intermediário" },
     { name: "ShadCN", icon: PanelTopClose, level: "Intermediário" },
     { name: "Bootstrap", icon: Boxes, level: "Intermediário" },
@@ -148,6 +149,23 @@ export default function Portfolio() {
       demo: "https://github.com/luizfelipeflorencio/React-Cost",
       image: "/image3.png",
     },
+    {
+      title: "Digital CRM - Sistema de Ponto",
+      description: "Sistema de ponto eletrônico corporativo desenvolvido como freelance, focado em otimizar o controle e gestão das jornadas de trabalho das empresas. Participei de todas as etapas, incluindo APIs, back-end, front-end, design e refatoração de código.",
+      technologies: ["MongoDB", "Express", "React", "Node.js"],
+      github: null, 
+      demo: "https://jfclock.com.br/",
+      image: "/image4.png",
+    },
+    {
+      title: "AgendaFlow - Sistema de Agendamento",
+      description: "Sistema online para agendamentos de salões, barbearias e profissionais autônomos. Desenvolvido para facilitar a gestão de clientes, horários e serviços, trazendo organização e eficiência para os estabelecimentos. Fui responsável por toda a arquitetura do banco de dados, APIs, back-end, front-end e integrações.",
+      technologies: ["Express", "React", "Node.js", "Supabase"],
+      github: null, 
+      demo: "https://agendaflow.2.58.80.85.sslip.io/", 
+      image: "/image5.png",
+    },
+
   ]
 
   return (
@@ -220,7 +238,7 @@ export default function Portfolio() {
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <AnimatedButton href="/Luiz_Felipe_Curriculo.docx" download="Luiz_Felipe_Curriculo.docx">
+            <AnimatedButton href="/Luiz_Felipe_CV.pdf" download="Luiz_Felipe_CV.pdf">
               <FileCode className="h-5 w-5" />
               Baixar Currículo
             </AnimatedButton>
@@ -290,7 +308,7 @@ export default function Portfolio() {
           </p>
         </motion.div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-auto">
+        <div className="grid gap-8 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 mx-auto">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
@@ -331,7 +349,7 @@ export default function Portfolio() {
                   >
                     <Badge
                       className={`
-                        px-3 py-1 text-sm font-medium rounded-full border transition-all duration-300
+                        px-2 py-1 text-xs font-medium rounded-full border transition-all duration-300 sm:px-3 sm:py-1 sm:text-sm
                         ${skill.level === 'Avançado'
                           ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30 group-hover:bg-emerald-500/30'
                           : skill.level === 'Intermediário'

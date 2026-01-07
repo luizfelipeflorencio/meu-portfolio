@@ -108,20 +108,20 @@ export default function Portfolio() {
   const projectsInView = useInView(projectsRef, { once: true })
   const contactInView = useInView(contactRef, { once: true })
   const skills = [
-    { name: "JavaScript", icon: FileCode, level: "Avançado" },
-    { name: "React", icon: Atom, level: "Avançado" },
-    { name: "NextJS", icon: LayoutTemplate, level: "Avançado" },
-    { name: "Git", icon: GitBranch, level: "Avançado" },
-    { name: "API Rest", icon: CloudCog, level: "Intermediário" },
-    { name: "Node.js", icon: Server, level: "Intermediário" },
-    { name: "MongoDB", icon: Database, level: "Intermediário" },
-    { name: "Supabase", icon: Database, level: "Intermediário" },
-    { name: "MySQL", icon: Database, level: "Intermediário" },
-    { name: "ShadCN", icon: PanelTopClose, level: "Intermediário" },
-    { name: "Bootstrap", icon: Boxes, level: "Intermediário" },
-    { name: "TailwindCSS", icon: Wind, level: "Intermediário" },
-    { name: "Figma", icon: MonitorSmartphone, level: "Intermediário" },
-    { name: "PHP", icon: Braces, level: "Básico" },
+    { name: "JavaScript", icon: FileCode },
+    { name: "React", icon: Atom },
+    { name: "NextJS", icon: LayoutTemplate },
+    { name: "Git", icon: GitBranch },
+    { name: "API Rest", icon: CloudCog },
+    { name: "Node.js", icon: Server },
+    { name: "MongoDB", icon: Database },
+    { name: "Supabase", icon: Database },
+    { name: "MySQL", icon: Database },
+    { name: "ShadCN", icon: PanelTopClose },
+    { name: "Bootstrap", icon: Boxes },
+    { name: "TailwindCSS", icon: Wind },
+    { name: "Figma", icon: MonitorSmartphone },
+    { name: "PHP", icon: Braces },
   ]
 
   const projects = [
@@ -238,7 +238,7 @@ export default function Portfolio() {
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <AnimatedButton href="/Luiz_Felipe_CV.pdf" download="Luiz_Felipe_CV.pdf">
+            <AnimatedButton href="/Luiz_Felipe_Curriculo.pdf" download="Luiz_Felipe_Curriculo.pdf">
               <FileCode className="h-5 w-5" />
               Baixar Currículo
             </AnimatedButton>
@@ -341,26 +341,6 @@ export default function Portfolio() {
                   <h3 className="text-xl font-semibold text-white group-hover:text-cyan-300 transition-colors duration-300">
                     {skill.name}
                   </h3>
-
-                  <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    animate={skillsInView ? { scale: 1, opacity: 1 } : {}}
-                    transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}
-                  >
-                    <Badge
-                      className={`
-                        px-2 py-1 text-xs font-medium rounded-full border transition-all duration-300 sm:px-3 sm:py-1 sm:text-sm
-                        ${skill.level === 'Avançado'
-                          ? 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30 group-hover:bg-emerald-500/30'
-                          : skill.level === 'Intermediário'
-                            ? 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30 group-hover:bg-yellow-500/30'
-                            : 'bg-blue-500/20 text-blue-300 border-blue-500/30 group-hover:bg-blue-500/30'
-                        }
-                      `}
-                    >
-                      {skill.level}
-                    </Badge>
-                  </motion.div>
                 </div>
 
                 {/* Animated border */}

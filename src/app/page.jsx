@@ -126,43 +126,51 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Landing Page",
-      description: "Landing Page para uma empresa de ar condicionado poder mostrar os seus serviços",
+      title: "OdontoFlow - SaaS Odontológico",
+      description: "SaaS especializado na gestão de clínicas odontológicas. Atuei como desenvolvedor Front-end, sendo responsável pela criação das telas, implementação das regras de negócio no cliente e desenvolvimento de lógicas complexas para otimizar o fluxo de trabalho dos dentistas.",
+      technologies: ["React", "NextJS", "TailwindCSS", "ShadCN"],
+      github: null,
+      demo: "https://use.ondontoflow.cloud",
+      image: "/odonto.png",
+    },
+    {
+      title: "Climatiza - Landing Page Profissional",
+      description: "Landing Page de alta conversão desenvolvida para uma empresa de climatização. O projeto foca em uma experiência de usuário intuitiva, design moderno e performance otimizada para apresentação de serviços e captura de leads.",
       technologies: ["React", "NextJS", "TailwindCSS", "ShadCN"],
       github: "https://github.com/luizfelipeflorencio/aciolifaculdade",
       demo: "https://acioli.vercel.app/",
       image: "./image.png",
     },
     {
-      title: "LinkTree",
-      description: "LinkTree feito para uma cliente usar na Biografia do seu Instragram",
+      title: "BioLink Personalizado",
+      description: "Solução de 'Link na Bio' customizada para profissionais expandirem sua presença digital. Desenvolvida com foco em acessibilidade e rapidez, permitindo uma navegação fluida entre múltiplos canais de contato e redes sociais.",
       technologies: ["React", "NextJS", "TailwindCSS", "ShadCN"],
       github: "https://github.com/luizfelipeflorencio/linktree",
       demo: "https://flaviadepilacaolinktree.vercel.app/",
       image: "./image2.png",
     },
     {
-      title: "API REST e REACT",
-      description: "Sistema para controle de projeto, onde fiz para aprender React e API REST",
+      title: "Project Management System",
+      description: "Aplicação robusta de gestão de projetos desenvolvida para o controle de custos e cronogramas. O sistema integra uma API RESTful para manipulação de dados em tempo real, focando na organização e eficiência operacional.",
       technologies: ["React", "API REST", "JavaScript"],
       github: "https://github.com/luizfelipeflorencio/React-Cost",
       demo: "https://github.com/luizfelipeflorencio/React-Cost",
       image: "/image3.png",
     },
     {
-      title: "Digital CRM - Sistema de Ponto",
-      description: "Sistema de ponto eletrônico corporativo desenvolvido como freelance, focado em otimizar o controle e gestão das jornadas de trabalho das empresas. Participei de todas as etapas, incluindo APIs, back-end, front-end, design e refatoração de código.",
+      title: "Digital CRM - Ponto Eletrônico",
+      description: "Sistema corporativo de ponto eletrônico desenvolvido sob medida. Fui responsável pelo ciclo completo de desenvolvimento, desde a arquitetura de APIs até o design da interface, visando otimizar a gestão de jornada de trabalho em larga escala.",
       technologies: ["MongoDB", "Express", "React", "Node.js"],
-      github: null, 
+      github: null,
       demo: "https://jfclock.com.br/",
       image: "/image4.png",
     },
     {
-      title: "AgendaFlow - Sistema de Agendamento",
-      description: "Sistema online para agendamentos de salões, barbearias e profissionais autônomos. Desenvolvido para facilitar a gestão de clientes, horários e serviços, trazendo organização e eficiência para os estabelecimentos. Fui responsável por toda a arquitetura do banco de dados, APIs, back-end, front-end e integrações.",
+      title: "AgendaFlow - Gestão de Agendamentos",
+      description: "Plataforma SaaS para gestão de agendamentos voltada a profissionais liberais. Implementei toda a infraestrutura, desde o banco de dados até as integrações de Front-end, entregando uma ferramenta eficiente para controle de horários e clientes.",
       technologies: ["Express", "React", "Node.js", "Supabase"],
-      github: null, 
-      demo: "https://agendaflow.2.58.80.85.sslip.io/", 
+      github: null,
+      demo: "https://agendaflow.2.58.80.85.sslip.io/",
       image: "/image5.png",
     },
 
@@ -238,7 +246,7 @@ export default function Portfolio() {
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
-            <AnimatedButton href="/Luiz_Felipe_Curriculo.pdf" download="Luiz_Felipe_Curriculo.pdf">
+            <AnimatedButton href="/Curriculo_Luiz_Felipe.pdf" download="Curriculo_Luiz_Felipe.pdf">
               <FileCode className="h-5 w-5" />
               Baixar Currículo
             </AnimatedButton>
@@ -397,14 +405,14 @@ export default function Portfolio() {
               animate={projectsInView ? { opacity: 1, y: 0, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ y: -15, transition: { duration: 0.3 } }}
-              className="group"
+              className="group h-full"
             >
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500">
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 shadow-2xl hover:shadow-purple-500/25 transition-all duration-500 h-full flex flex-col">
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
 
                 {/* Image container */}
-                <div className="relative aspect-video overflow-hidden">
+                <div className="relative aspect-video overflow-hidden flex-shrink-0">
                   <motion.img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
@@ -454,7 +462,7 @@ export default function Portfolio() {
                 </div>
 
                 {/* Content */}
-                <div className="relative z-10 p-6 space-y-4">
+                <div className="relative z-10 p-6 space-y-4 flex flex-col flex-grow">
                   <motion.h3
                     className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300"
                     initial={{ opacity: 0, x: -20 }}
@@ -465,7 +473,7 @@ export default function Portfolio() {
                   </motion.h3>
 
                   <motion.p
-                    className="text-slate-300 leading-relaxed"
+                    className="text-slate-300 leading-relaxed flex-grow"
                     initial={{ opacity: 0, x: -20 }}
                     animate={projectsInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5, delay: index * 0.2 + 0.4 }}
